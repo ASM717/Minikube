@@ -6,12 +6,11 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 13:45:42 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/06 13:47:17 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/09 20:18:47 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/sh
-
 
 minikube stop
 minikube delete --all
