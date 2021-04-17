@@ -6,11 +6,11 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/16 12:17:22 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/16 14:17:41 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/16 21:54:36 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM alpine:3.12
+FROM alpine:3.12.7
 
 RUN apk update
 RUN apk add wget

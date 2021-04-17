@@ -6,18 +6,17 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 16:59:32 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/16 14:26:13 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/16 21:54:28 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM alpine:3.12
+FROM alpine:3.12.7
 
 RUN apk update
 RUN apk add nginx
 RUN apk add supervisor
 RUN	apk add wget
 RUN apk add tar
-# RUN apk add lighttpd
 RUN apk add php7 php7-fpm php7-mysqli php7-mbstring php7-json php7-session\
 	php7-common php7-iconv php7-gd php7-curl php7-xml php7-imap php7-cgi \
 	fcgi php7-pdo php7-pdo_mysql php7-soap php7-xmlrpc php7-posix \
@@ -43,4 +42,4 @@ COPY ./startsupervisord.sh	/
 
 EXPOSE	5000
 
-CMD /startsupervisord.sh
+CMD ./startsupervisord.sh

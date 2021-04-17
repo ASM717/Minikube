@@ -6,11 +6,11 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 15:25:25 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/14 16:29:14 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/16 21:54:07 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM alpine:3.12
+FROM alpine:3.12.7
 
 RUN apk update
 RUN apk add sudo
@@ -27,7 +27,7 @@ RUN mkdir -p /run/mysqld/
 RUN sudo chmod -R 777 /var/lib/mysql/
 
 COPY ./my.cnf /etc/
-COPY ./mysql-service.sql /
+# COPY ./mysql-service.sql /
 COPY ./telegraf.conf /etc/telegraf/
 COPY ./supervisord.conf /etc/supervisord.conf
 COPY ./start.sh /

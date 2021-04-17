@@ -1,43 +1,54 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: phpmyadmin-service
+  name: ftps-service
   labels:
-    app: phpmyadmin
+    app: ftps
     owner: amuriel
   annotations:
     metallb.universe.tf/allow-shared-ip: default
 spec:
   selector:
-    app: phpmyadmin
+    app: ftps
   type: LoadBalancer
   loadBalancerIP: 192.168.99.128
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 5000
+      name: standard
+      port: 20
+      targetPort: 20
+    - protocol: TCP
+      name: ftps
+      port: 21
+      targetPort: 21
+    - protocol: TCP
+      name: passive-port
+      port: 20020
+      targetPort: 20020
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: phpmyadmin-deployment
+  name: ftps-deployment
   labels:
-    app: phpmyadmin
+    app: ftps
     owner: amuriel
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: phpmyadmin
+      app: ftps
   template:
     metadata:
       labels:
-        app: phpmyadmin
+        app: ftps
         owner: amuriel
     spec:
       containers:
-        - name: phpmyadmin
-          image: phpmyadmin_image
+        - name: ftps
+          image: ftps_image
           imagePullPolicy: Never
           ports:
-            - containerPort: 5000
+            - containerPort: 20
+            - containerPort: 21
+            - containerPort: 20020

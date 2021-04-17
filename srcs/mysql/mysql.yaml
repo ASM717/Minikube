@@ -48,6 +48,7 @@ spec:
     metadata:
       labels:
         app: mysql
+        owner: amuriel
     spec:
       containers:
       - image: mysql_image
