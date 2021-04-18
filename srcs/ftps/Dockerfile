@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/17 12:00:37 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/17 12:29:45 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/18 12:14:24 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,21 @@ RUN apk add telegraf\
 	--allow-untrusted\
 	--no-cache
 
-
-RUN openssl req -x509 -nodes -days 365 -subj "/C=RU/ST=Moscow/L=Moscow/O=21 SCHOOL/OU=AMURIEL/CN=certificate ssl html"\
+RUN openssl req -x509 -nodes -days 365\
+	-subj "/C=RU/ST=Moscow/L=Moscow/O=21 SCHOOL/OU=AMURIEL/CN=certificate ssl html"\
 	-newkey rsa:2048\
-	-keyout /etc/ssl/private/pure-ftpd.pem\
-	-out /etc/ssl/private/pure-ftpd.pem
+	-keyout /etc/ssl/vsftpd/ftpd.key\
+	-out /etc/ssl/vsftpd/ftpd.crt
 
 RUN adduser -D user && echo "user:user" | chpasswd
+
+COPY ./supervisord.conf /etc/supervisord.conf
+COPY ./vsftpd.conf /etc/vsftpd/vsftpd.conf
+COPY ./telegraf.conf /etc/telegraf/
+COPY ./start.sh	/
+
+# Открытие портов
+EXPOSE 21 20 20020
+
+# Запуск
+CMD sh start.sh
