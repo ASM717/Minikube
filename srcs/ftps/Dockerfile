@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/17 12:00:37 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/18 12:14:24 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/19 10:07:23 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,13 +23,13 @@ RUN apk add telegraf\
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community/\
 	--allow-untrusted\
 	--no-cache
-
+# intall ssl
 RUN openssl req -x509 -nodes -days 365\
 	-subj "/C=RU/ST=Moscow/L=Moscow/O=21 SCHOOL/OU=AMURIEL/CN=certificate ssl html"\
 	-newkey rsa:2048\
 	-keyout /etc/ssl/vsftpd/ftpd.key\
 	-out /etc/ssl/vsftpd/ftpd.crt
-
+# install ssh
 RUN adduser -D user && echo "user:user" | chpasswd
 
 COPY ./supervisord.conf /etc/supervisord.conf

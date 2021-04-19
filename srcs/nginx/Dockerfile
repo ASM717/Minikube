@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 15:23:09 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/18 15:15:24 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/19 10:07:41 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ FROM alpine:3.12.7
 RUN apk update
 RUN apk add supervisor
 RUN apk add nginx
-RUN apk add openssh
 RUN apk add openssl
 RUN apk add openrc
 RUN apk add bash
