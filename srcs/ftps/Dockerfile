@@ -6,15 +6,20 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/17 12:00:37 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/19 10:07:23 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/20 13:02:07 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#command for enter to path in terminal
+# kubectl exec -it deploy/ftps-deployment -- /bin/sh
+#
 
 FROM alpine:3.12.7
 
 RUN apk update
 RUN apk add vsftpd
 RUN apk add supervisor
+RUN apk add vim
 RUN apk add openssh
 RUN apk add openssl
 RUN apk add openrc
@@ -23,22 +28,25 @@ RUN apk add telegraf\
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community/\
 	--allow-untrusted\
 	--no-cache
-# intall ssl
+
+RUN mkdir -p home/user/ && chmod -R 777 home/
+RUN mkdir -p /etc/ssl/vsftpd/ && chmod -R 777 /etc/ssl/vsftpd/
+
+# install ssl
 RUN openssl req -x509 -nodes -days 365\
 	-subj "/C=RU/ST=Moscow/L=Moscow/O=21 SCHOOL/OU=AMURIEL/CN=certificate ssl html"\
 	-newkey rsa:2048\
 	-keyout /etc/ssl/vsftpd/ftpd.key\
 	-out /etc/ssl/vsftpd/ftpd.crt
-# install ssh
-RUN adduser -D user && echo "user:user" | chpasswd
 
-COPY ./supervisord.conf /etc/supervisord.conf
+# install ssh
+RUN adduser -D user && echo "user:amuriel" | chpasswd
+
 COPY ./vsftpd.conf /etc/vsftpd/vsftpd.conf
 COPY ./telegraf.conf /etc/telegraf/
-COPY ./start.sh	/
+COPY ./supervisord.conf /etc/supervisord.conf
 
-# Открытие портов
-EXPOSE 21 20 20020
+EXPOSE 21 21000
 
-# Запуск
-CMD sh start.sh
+# CMD /usr/bin/supervisord -c /etc/supervisord.conf
+CMD ["/usr/bin/supervisord"]

@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 16:59:32 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/16 21:54:28 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/20 13:03:02 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,8 @@ COPY ./telegraf.conf /etc/telegraf/
 COPY ./supervisord.conf /etc/supervisord.conf
 COPY ./config.inc.php /www/phpmyadmin/
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-COPY ./startsupervisord.sh	/
 
 EXPOSE	5000
 
-CMD ./startsupervisord.sh
+CMD ["/usr/bin/supervisord"]
+# CMD /usr/bin/supervisord -c /etc/supervisord.conf

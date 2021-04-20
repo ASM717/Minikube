@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/16 12:17:22 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/16 21:54:36 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/20 13:03:15 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,8 @@ COPY ./supervisord.conf /etc/supervisord.conf
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY ./wp-config.php /www/
 COPY ./telegraf.conf /etc/telegraf/
-COPY ./startsupervisord.sh ./
 
 EXPOSE 5050
 
-CMD ./startsupervisord.sh
+CMD ["/usr/bin/supervisord"]
+# CMD /usr/bin/supervisord -c /etc/supervisord.conf

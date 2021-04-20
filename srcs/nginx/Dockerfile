@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 15:23:09 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/19 10:07:41 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/20 13:02:49 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,5 +39,5 @@ COPY ./index.html /www/index.html
 
 EXPOSE 80 443 22
 
-COPY ./startsupervisord.sh /tmp/
-CMD tmp/startsupervisord.sh
+# CMD /usr/bin/supervisord -c /etc/supervisord.conf
+CMD ["/usr/bin/supervisord"]
