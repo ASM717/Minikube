@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 13:32:23 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/20 12:19:24 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/21 18:42:51 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,9 @@ kubectl apply -f ./srcs/wordpress/wordpress.yaml
 
 docker build -t ftps_image srcs/ftps
 kubectl apply -f ./srcs/ftps/ftps.yaml
+
+docker build -t influxdb_image srcs/influxdb
+kubectl apply -f ./srcs/influxdb/influxdb.yaml
 
 minikube dashboard
 # kubectl get pods
