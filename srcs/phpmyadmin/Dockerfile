@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 16:59:32 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/20 13:03:02 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/22 20:13:19 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ RUN apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/comm
 RUN mkdir -p /www/etc/telegraf
 RUN mkdir -p /var/run/nginx
 RUN mkdir -p /var/run/php
+# RUN mkdir -p /var/run/phpmyadmin
 
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-languages.tar.gz
 RUN tar -xzvf phpMyAdmin-5.1.0-all-languages.tar.gz
