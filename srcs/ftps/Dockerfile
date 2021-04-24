@@ -6,11 +6,11 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/17 12:00:37 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/20 13:02:07 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/23 20:37:40 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#command for enter to path in terminal
+#command for enter in container
 # kubectl exec -it deploy/ftps-deployment -- /bin/sh
 #
 
@@ -23,6 +23,7 @@ RUN apk add vim
 RUN apk add openssh
 RUN apk add openssl
 RUN apk add openrc
+RUN apk add	libc6-compat
 RUN apk add bash
 RUN apk add telegraf\
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community/\

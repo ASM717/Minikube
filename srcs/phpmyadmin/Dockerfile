@@ -6,15 +6,21 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 16:59:32 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/22 20:13:19 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/23 20:39:35 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#command for enter in container
+# kubectl exec -it deploy/phpmyadmin-deployment -- /bin/sh
+#
 
 FROM alpine:3.12.7
 
 RUN apk update
 RUN apk add nginx
 RUN apk add supervisor
+RUN apk add	libc6-compat
+RUN apk add	openrc
 RUN	apk add wget
 RUN apk add tar
 RUN apk add php7 php7-fpm php7-mysqli php7-mbstring php7-json php7-session\

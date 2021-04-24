@@ -6,9 +6,13 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 15:23:09 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/20 13:02:49 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/23 20:54:01 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#command for enter in container
+# kubectl exec -it deploy/nginx-deployment -- /bin/sh
+#
 
 FROM alpine:3.12.7
 
@@ -17,6 +21,7 @@ RUN apk add supervisor
 RUN apk add nginx
 RUN apk add openssl
 RUN apk add openrc
+RUN apk add	libc6-compat
 RUN apk add bash
 RUN apk add telegraf\
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community/\
@@ -37,7 +42,7 @@ COPY ./supervisord.conf /etc/supervisord.conf
 COPY ./telegraf.conf /etc/telegraf/
 COPY ./index.html /www/index.html
 
-EXPOSE 80 443 22
+EXPOSE 80 443
 
 # CMD /usr/bin/supervisord -c /etc/supervisord.conf
 CMD ["/usr/bin/supervisord"]

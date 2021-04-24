@@ -6,9 +6,13 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 15:25:25 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/20 13:13:40 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/23 20:39:02 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#command for enter in container
+# kubectl exec -it deploy/mysql-deployment -- /bin/sh
+#
 
 FROM alpine:3.12.7
 
@@ -16,6 +20,7 @@ RUN apk update
 RUN apk add vim
 RUN apk add supervisor
 RUN apk add openrc
+RUN apk add	libc6-compat
 RUN apk add mysql mysql-client\
     mariadb mariadb-common mariadb-client
 RUN apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/\

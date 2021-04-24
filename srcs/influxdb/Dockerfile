@@ -6,9 +6,13 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/21 11:03:02 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/23 16:46:02 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/23 20:38:41 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#command for enter in container
+# kubectl exec -it deploy/influxdb-deployment -- /bin/sh
+#
 
 FROM alpine:3.12.7
 

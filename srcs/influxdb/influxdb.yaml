@@ -18,6 +18,7 @@ metadata:
   name: influxdb-deployment
   labels:
     app: influxdb
+    owner: amuriel
 spec:
   strategy:
     type: RollingUpdate
