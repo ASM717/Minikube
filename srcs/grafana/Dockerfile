@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 12:59:42 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/23 20:38:19 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/26 20:03:54 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ RUN apk add glibc-2.28-r0.apk
 
 COPY ./supervisord.conf /etc/supervisord.conf
 COPY ./telegraf.conf /etc/telegraf/
-# COPY ./grafana.db /data/
+COPY ./grafana.db /data/
 
 EXPOSE 3000
 
