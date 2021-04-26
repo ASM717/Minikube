@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 13:32:23 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/24 13:09:26 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/26 20:45:50 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,12 +42,12 @@ kubectl apply -f ./srcs/influxdb/influxdb.yaml
 docker build -t grafana_image srcs/grafana
 kubectl apply -f ./srcs/grafana/grafana.yaml
 
+minikube dashboard
+
 #-----------------------------#
 # wp		amuriel; amuriel  #
 # php		root; amuriel     #
 # grafana	admin; amuriel    #
 #-----------------------------#
 
-
-minikube dashboard
 # kubectl get pods
