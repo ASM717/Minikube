@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/16 12:17:22 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/23 20:39:51 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/27 13:54:12 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,4 +42,4 @@ COPY ./telegraf.conf /etc/telegraf/
 EXPOSE 5050
 
 CMD ["/usr/bin/supervisord"]
-# CMD /usr/bin/supervisord -c /etc/supervisord.conf
+

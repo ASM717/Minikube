@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 13:32:23 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/26 20:45:50 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/27 14:48:46 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,6 @@ minikube dashboard
 # wp		amuriel; amuriel  #
 # php		root; amuriel     #
 # grafana	admin; amuriel    #
+# filezilla	user; amuriel     #
 #-----------------------------#
 
-# kubectl get pods

@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 16:59:32 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/26 20:44:56 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/27 13:54:02 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,4 +47,4 @@ COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE	5000
 
 CMD ["/usr/bin/supervisord"]
-# CMD /usr/bin/supervisord -c /etc/supervisord.conf
+

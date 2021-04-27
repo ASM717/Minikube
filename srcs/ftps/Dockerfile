@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/17 12:00:37 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/23 20:37:40 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/27 14:36:04 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,6 @@ COPY ./vsftpd.conf /etc/vsftpd/vsftpd.conf
 COPY ./telegraf.conf /etc/telegraf/
 COPY ./supervisord.conf /etc/supervisord.conf
 
-EXPOSE 21 21000
+EXPOSE 21 20001
 
-# CMD /usr/bin/supervisord -c /etc/supervisord.conf
 CMD ["/usr/bin/supervisord"]
