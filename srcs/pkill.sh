@@ -12,5 +12,5 @@ kubectl exec deploy/mysql-deployment -- pkill mysqld && kubectl exec deploy/mysq
 
 kubectl exec deploy/ftps-deployment -- pkill vsftpd && kubectl exec deploy/ftps-deployment -- pkill telegraf
 
-ubectl exec deploy/grafana-deployment -- pkill grafana && kubectl exec deploy/grafana-deployment -- pkill telegraf
+kubectl exec deploy/grafana-deployment -- pkill grafana && kubectl exec deploy/grafana-deployment -- pkill telegraf
 
