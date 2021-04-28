@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/21 11:03:02 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/23 20:38:41 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/28 10:43:34 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RUN apk update
 RUN apk add influxdb
 RUN apk add supervisor
 RUN apk add openrc
-RUN apk add	libc6-compat
+RUN apk add libc6-compat
 RUN apk add telegraf\
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community/\
 	--allow-untrusted\

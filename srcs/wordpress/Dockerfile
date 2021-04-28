@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/16 12:17:22 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/27 13:54:12 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/28 10:44:23 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ FROM alpine:3.12.7
 RUN apk update
 RUN apk add wget
 RUN apk add nginx
-RUN apk add	openrc
-RUN apk add	libc6-compat
+RUN apk add openrc
+RUN apk add libc6-compat
 RUN apk add supervisor
 RUN apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/\
 	--allow-untrusted\

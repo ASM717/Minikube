@@ -6,7 +6,7 @@
 #    By: amuriel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/17 12:00:37 by amuriel           #+#    #+#              #
-#    Updated: 2021/04/27 14:36:04 by amuriel          ###   ########.fr        #
+#    Updated: 2021/04/28 10:42:07 by amuriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ RUN apk add vim
 RUN apk add openssh
 RUN apk add openssl
 RUN apk add openrc
-RUN apk add	libc6-compat
+RUN apk add libc6-compat
 RUN apk add bash
 RUN apk add telegraf\
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community/\
